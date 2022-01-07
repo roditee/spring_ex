@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h3>상품 정보 등록</h3>
-		<form method="post" action="/project/product/newProduct">
+		<form method="post" action="/project/product/newProduct3">
 				상품 번호 : <input type="text" name="no"><br>
 				상품명 : <input type="text" name="name"><br>
 				가격 : <input type="text" name="price"><br>

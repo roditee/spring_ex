@@ -30,7 +30,7 @@ public class NewController {
 	// 데이터와 뷰 둘 다 설정
 	// ModelAndView 객체 반환
 	@RequestMapping("/showInfo2")
-	public ModelAndView shoeInfo2(ModelAndView mv) {
+	public ModelAndView showInfo2(ModelAndView mv) {
 			mv.addObject("name", "이몽룡");
 			mv.addObject("address", "서울");
 			

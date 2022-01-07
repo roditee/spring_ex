@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProductController {
@@ -36,5 +37,31 @@ public class ProductController {
 			model.addAttribute("stock", stock);
 			
 			return "product/productResult";
+		}
+		
+		@RequestMapping("/product/newProduct2")
+		public String insertProduct2(@RequestParam("no") String no,
+													@RequestParam("name") String name,
+													@RequestParam("price") String price,
+													@RequestParam("company") String company,
+													@RequestParam("date") String date,
+													@RequestParam("stock") String stock,
+													Model model) {
+			
+			// view 페이지로 출력 : Model 설정
+			model.addAttribute("no", no);
+			model.addAttribute("name", name);
+			model.addAttribute("price", price);
+			model.addAttribute("company", company);
+			model.addAttribute("date", date);
+			model.addAttribute("stock", stock);
+			
+			return "product/productResult";
+		}
+		
+		// Command 객체 사용
+		@RequestMapping("/product/newProduct3")
+		public String insertProuct3(Product product) {
+			return "product/productCmdResult";
 		}
 }
