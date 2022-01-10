@@ -10,7 +10,7 @@
 	<body>
 			<h3>전체 도서 정보 조회</h3>
 			<table border="1" width="600">
-				<tr><th>도서번호</th><th>도서명</th><th>가격</th><th>저자</th><th>출판일</th><th>출판사번호</th></tr>
+				<tr><th>도서번호</th><th>도서명</th><th>가격</th><th>저자</th><th>출판일</th><th>재고</th></tr>
 			
 			   <c:forEach items="${bookList }" var="book">
 			   	<tr><td><a href="<c:url value='/book/detailViewBook/${book.bookNo}'/>">${book.bookNo }</a></td>

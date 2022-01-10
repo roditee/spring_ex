@@ -15,7 +15,7 @@
 				<tr><td>가격</td><td> <input type="text" name="bookPrice" value="${book.bookPrice}"></td></tr>
 				<tr><td>저자</td><td><input type="text" name="bookAuthor" value="${book.bookAuthor}"></td></tr>
 				<tr><td>출판일</td> <td><input type="text" name="bookDate" value="${book.bookDate}"></td></tr>
-				<tr><td>출판사번호</td> <td><input type="text" name="qtyNo" value="${book.qtyNo}"></td></tr>
+				<tr><td>재고</td> <td><input type="text" name="qtyNo" value="${book.qtyNo}"></td></tr>
 				<tr><td colspan="2"><input type="submit" value="수정"><input type="reset" value="취소"></td></tr>
 			</table>
 		</form>

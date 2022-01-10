@@ -74,6 +74,6 @@ public class BookController {
 	@RequestMapping("/book/deleteBook/{bookNo}")
 	public String deleteBook(@PathVariable String bookNo) {
 		service.deleteBook(bookNo);
-		return "redirect:./listAllBook";  // 전체 도서 정보 조회 페이지로 포워딩
+		return "redirect:../listAllBook";  // 전체 도서 정보 조회 페이지로 포워딩
 	}
 }

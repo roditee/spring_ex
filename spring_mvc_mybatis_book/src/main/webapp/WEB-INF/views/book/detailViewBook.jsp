@@ -15,7 +15,7 @@
 			<tr><td>가격</td><td>${book.bookPrice }</td></tr>
 			<tr><td>저자</td><td>${book.bookAuthor }</td></tr>
 			<tr><td>출판일</td><td>${book.bookDate }</td></tr>
-			<tr><td>출판사번호</td><td>${book.qtyNo }</td></tr>
+			<tr><td>재고</td><td>${book.qtyNo }</td></tr>
 		</table><br>
 		
 		<!-- 상품 정보 수정 화면으로 이동 -->
@@ -23,7 +23,7 @@
 		<a href="<c:url value='/book/updateBookForm/${book.bookNo }'/>">도서 정보 수정</a><br><br>
 		
 		<!-- 상품 정보 삭제 : 삭제 여부 확인 처리 (자바스크립트로) -->
-		<a href="javascript:deleteCheck();">상품 정보 삭제</a><br><br>
+		<a href="javascript:deleteCheck();">도서 정보 삭제</a><br><br>
 		<script type="text/javascript">
 			function deleteCheck() {
 				var answer = confirm("선택한 도서 정보를 삭제하시겠습니까?");
