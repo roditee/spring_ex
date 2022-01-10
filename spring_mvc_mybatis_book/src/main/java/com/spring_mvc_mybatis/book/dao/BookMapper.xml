@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.spring_mvc_mybatis.book.dao.IBookDAO">
+  		<resultMap  id="bookResult" type="com.spring_mvc_mybatis.book.model.BookVO">
+  			<result property="bookNo" column="bookNo" />
+  			<result property="bookName" column="bookName" />
+  			<result property="bookPrice" column="bookPrice" />
+  			<result property="bookAuthor" column="bookAuthor" />
+  			<result property="bookDate" column="bookDate" />
+  			<result property="qtyNo" column="qtyNo" />	
+  		</resultMap> 
+  
+  		<!-- id : DAO에 있는거랑 일치해야 함 -->
+  		<!-- 전체 도서 정보 조회 -->
+  		<select id="listAllBook" resultMap="bookResult">
+  			SELECT * FROM book ORDER BY bookNo;
+  		</select>  
+  		
+  		<!-- 상세 도서 정보 조회 -->
+  		<select id="detailViewBook" parameterType="string" resultType="com.spring_mvc_mybatis.book.model.BookVO">
+  			SELECT * FROM book WHERE bookNo=#{bookNo}
+  		</select>
+  		
+  		<!-- 도서 정보 등록 -->
+  		<insert id="insertBook" parameterType="com.spring_mvc_mybatis.book.model.BookVO">
+  			INSERT INTO book (bookNo, bookName, bookPrice, bookAuthor, bookDate, qtyNo)
+  			VALUES (#{bookNo}, #{bookName}, #{bookPrice}, #{bookAuthor}, #{bookDate}, #{qtyNo})
+  		</insert>
+  		
+  		<!-- 도서 정보 수정 : 수정된 정보 DB에 저장 (상품 번호는 수정 안 함 : 기본키 변경 안 함)-->
+  		<update id="updateBook" parameterType="com.spring_mvc_mybatis.book.model.BookVO">
+  			UPDATE book SET bookName=#{bookName}, bookPrice=#{bookPrice}, bookAuthor=#{bookAuthor}, bookDate=#{bookDate}, qtyNo=#{qtyNo}
+  			WHERE bookNo=#{bookNo}
+  		</update>
+  		
+  		<!-- 도서 정보 삭제  -->
+  		<delete id="deleteBook"  parameterType="string">
+  			DELETE FROM book WHERE bookNo=#{bookNo}
+  		</delete>
+  </mapper>

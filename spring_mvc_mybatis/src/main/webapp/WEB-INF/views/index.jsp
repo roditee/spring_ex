@@ -12,5 +12,7 @@
 			<br>
 			<a href="product/listAllProduct">전체 상품 조회</a><br><br>
 			<a href="product/newProductForm">상품 등록</a><br><br>
+			
+			<img src="/mybatis/resources/image/apple.png">
 	</body>
 </html>
