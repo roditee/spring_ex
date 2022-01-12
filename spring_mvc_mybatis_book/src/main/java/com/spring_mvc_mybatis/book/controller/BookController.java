@@ -1,12 +1,15 @@
 package com.spring_mvc_mybatis.book.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring_mvc_mybatis.book.model.BookVO;
 import com.spring_mvc_mybatis.book.service.BookService;
@@ -70,7 +73,7 @@ public class BookController {
 		return "redirect:./listAllBook";  // 전체 도서 정보 조회 페이지로 포워딩
 	}
 	
-	// 상품 정보 삭제
+	// 도서 정보 삭제
 	@RequestMapping("/book/deleteBook/{bookNo}")
 	public String deleteBook(@PathVariable String bookNo) {
 		service.deleteBook(bookNo);

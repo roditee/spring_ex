@@ -1,6 +1,7 @@
 package com.spring_mvc_mybatis.book.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -45,5 +46,4 @@ public class BookService implements IBookService {
 		// TODO Auto-generated method stub
 		dao.deleteBook(bookNo);
 	}
-
 }
