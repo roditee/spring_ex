@@ -1,0 +1,93 @@
+/************* Section ************/
+
+/************* MBTI Category ************/
+#mbtiCtgGroup {
+  width: 100%;
+  height: 300px;
+  background: #f4f2f1;
+  height: 205px;
+  padding: 23px 0;
+}
+
+.mbtiCtg {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin: 17px 70px 0px 70px;
+}
+
+.mbtiItemsImg > img {
+  width: 63px;
+  height: 63px;
+  border-radius: 16px;
+}
+
+.mbtiItemsImg > img:hover {
+  opacity: 0.6;
+}
+
+.mbtiCtgItems a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mbtiItemsText {
+  text-align: center;
+}
+
+/************* MBTI별 인기 아이템 ************/
+#hotItemsSection {
+  width: 100%;
+  background: #f4f2f1;
+  padding: 35px 0;
+}
+
+#hotItemsSection > h2 {
+  padding: 0px 13px 13px 38px;
+}
+
+.hotItemGroup {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.hotItems {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background: white;
+  margin: 10px 0;
+}
+
+.hotItems:hover {
+  opacity: 0.8;
+}
+
+/************* 끼리's 추천 게시글 ************/
+#KIRRIRecommendSection {
+  width: 100%;
+  height: 450px;
+  background: #f4f2f1;
+  padding: 35px 0;
+}
+
+#KIRRIRecommendSection h2 {
+  padding: 0px 13px 13px 38px;
+}
+.KIRRIRecommendGroup {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.KIRRIRecommendItems {
+  width: 400px;
+  height: 350px;
+  border-radius: 20px;
+  background: white;
+  margin: 10px 0;
+}
+
+.KIRRIRecommendItems:hover {
+  opacity: 0.8;
+}

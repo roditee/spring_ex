@@ -1,5 +1,5 @@
 /**
- * login.js
+ * login2.js
  */
  
  $(document).ready(function(){
