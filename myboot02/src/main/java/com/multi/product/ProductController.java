@@ -47,7 +47,7 @@ public class ProductController {
 		//return "product/productListView"; // 이렇게 하면 데이터 출력 안 됨
 	}
 	
-	// 상품 상제 정보 페이지로 이동
+	// 상품 상세 정보 페이지로 이동
 	@RequestMapping("/product/detailViewProduct/{prdNo}")
 	public String detailViewProduct(@PathVariable String prdNo, Model model) {
 		// 상품번호 전달하고, 해당 상품 정보 받아오기 

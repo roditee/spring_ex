@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -46,7 +47,8 @@
 								<li><img src="image/tab3.png"></li>
 								<li><img src="image/tab4.png"></li>
 							</ul>
-						</div>								<div id="tabContent">
+						</div>	
+						<div id="tabContent">
 							<div><a href="#"><img src="image/tab_img_01.jpg"></a></div>
 							<div><a href="#"><img src="image/tab_img_02.jpg"></a></div>
 							<div><a href="#"><img src="image/tab_img_03.jpg"></a></div>
@@ -59,14 +61,20 @@
 					<div id="productBox">
 						<h3> 베스트 상품</h3>
 						<div class="product">
-							<div><a href="#"><img src="image/prd01.jpg"></a></div>
-							<div><a href="#"><img src="image/prd02.jpg"></a></div>
-							<div><a href="#"><img src="image/prd03.jpg"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1001 }'/>">
+									  <img src="<c:url value='/images/1001.jpg'/>"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1002 }'/>">
+									  <img src="<c:url value='/images/1002.jpg'/>"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1003 }'/>">
+									  <img src="<c:url value='/images/1003.jpg'/>"></a></div>
 						</div>
 						<div class="product">
-							<div><a href="#"><img src="image/prd04.jpg"></a></div>
-							<div><a href="#"><img src="image/prd05.jpg"></a></div>
-							<div><a href="#"><img src="image/prd06.jpg"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1004 }'/>">
+									  <img src="<c:url value='/images/1004.jpg'/>"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1005 }'/>">
+									  <img src="<c:url value='/images/1005.jpg'/>"></a></div>
+							<div><a href="<c:url value='/product/detailViewProduct/${1006 }'/>">
+									  <img src="<c:url value='/images/1006.jpg'/>"></a></div>
 						</div>
 					</div>
 				</article>
