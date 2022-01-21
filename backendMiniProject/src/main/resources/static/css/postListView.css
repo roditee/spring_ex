@@ -1,0 +1,38 @@
+#postListBox {
+	width:1500px;
+	margin: 62px auto 0 auto;
+    color: #43322b;
+}
+
+h3 {
+	font-size: 33px;
+	margin-bottom: 45px;
+    margin-top: 30px;
+}
+
+table {
+	margin: 50px auto;
+    width: 1400px;
+    text-align: center;
+    border-top: 1px solid black;
+    font-size: 26px;
+    color: #2c201c;
+}
+
+#firstRow {
+	height: 50px;
+	background:#ebdaa6;
+}
+
+#firstRow > th {
+	padding: 23px 0;
+}
+
+.rows {
+	height: 40px;
+	background:#f1e6c4;
+}
+
+th, td {
+	border-bottom: 1px solid black;
+}

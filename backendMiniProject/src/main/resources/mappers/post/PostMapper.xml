@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.backendMiniProject.post.IPostDAO">
+  		<resultMap  id="postResult" type="com.boot.backendMiniProject.post.PostVO">
+  			<result property="postNo" column="postNo" />
+  			<result property="memId" column="memId" />
+  			<result property="memMbti" column="memMbti" />
+  			<result property="postTitle" column="postTitle" />
+  			<result property="postContent" column="postContent" />
+  			<result property="postImg" column="postImg" />
+  		</resultMap> 
+  
+
+  		<select id="listAllPost" resultMap="postResult">
+  			SELECT * FROM post ORDER BY postNo
+  		</select>  
+  		
+  		<insert id="insertPost" parameterType="com.boot.backendMiniProject.post.PostVO">
+  			INSERT INTO post (postNo, memId, memMbti, postTitle, postContent, postImg)
+  			VALUES (#{postNo}, #{memId}, #{memMbti}, #{postTitle}, #{postContent}, #{postImg })
+  		</insert>
+  		
+  		<select id="detailViewPost" parameterType="string" resultType="com.boot.backendMiniProject.post.PostVO">
+  			SELECT * FROM post WHERE postNo=#{postNo}  		
+  		</select>
+  		
+  		<update id="updatePost" parameterType="com.boot.backendMiniProject.post.PostVO">
+  			UPDATE post SET postNo=#{postNo}, memMbti=#{memMbti}, postTitle=#{postTitle}, postContent=#{postContent}, postImg=#{postImg} 
+  			WHERE postNo=#{postNo}
+  		</update>
+  		
+  		<delete id="deletePost"  parameterType="string">
+  			DELETE FROM post WHERE postNo=#{postNo}
+  		</delete>
+  		
+  		<select id="postNoCheck" resultType="string" parameterType="string">
+  			SELECT postNo FROM post WHERE postNo=#{postNo}
+  		</select>
+  		
+  		<select id="postSearch" resultMap="postResult" parameterType="hashmap">
+  			SELECT * FROM post WHERE
+  			<choose>
+  				<when test="type != null and type.equals('memId')">
+  					memId LIKE CONCAT('%', #{keyword}, '%')
+  				</when>  				
+  				<when test="type != null and type.equals('memMbti')">
+  					memMbti LIKE CONCAT('%', #{keyword}, '%')
+  				</when>
+  			</choose>
+  		</select>
+  </mapper>
+  

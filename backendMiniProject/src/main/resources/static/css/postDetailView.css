@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.B {
+	margin: 0 auto;
+    font-size: 23px;
+   	padding: 17px;
+    background-color: #ebdaa6;
+    color: #795548;
+    border-radius: 10px;
+   	width: 800px;
+   	}
+
+.B th{
+	height: 100px;
+	width: 43%;
+}
+
+#h3 > h3 {
+	text-align: center;
+    font-size: 25px;
+    color: #46321a;
+    border-radius: 50px;
+    padding: 30px;
+	}
+	
+#h3 {
+	width: 800px;
+    margin: 60px auto 5px auto;
+}

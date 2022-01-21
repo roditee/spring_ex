@@ -1,0 +1,78 @@
+@charset "EUC-KR";
+
+#cartBox{
+  margin: 0 auto;
+	width: 80%;
+	height:1000px;
+	background:#9b8373;
+}
+
+#cartListBox {
+	margin: 30px auto 0 auto;
+	width:100%;
+	height:100%;
+	background:#796456;
+	padding-top: 25px;
+	border-radius: 125px;
+}
+
+form {
+	text-align: center;
+}
+
+table {
+	margin: 20px auto 0 auto;
+	width:900px;
+	color:white;
+}	
+
+tr {
+	height:50px;
+}
+
+th, td {
+	border:solid gray 1px;
+	padding:10px;
+}	
+
+input {
+	text-align:center;
+}
+
+#cartDeleteBox {
+	width:100%;
+	height:70px;
+	padding: 26px 160px;
+  margin-top: 25px;
+  color:white;
+}
+
+#allCheckBox {
+	float:left;
+}
+
+#deleteCart {
+	float:right;
+	width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  border-style: none;
+}
+
+#deleteCart:hover{
+	background:#dbdbdb;
+}
+
+#orderBtn, #cancelBtn {
+	border-radius: 50px;
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  margin: 20px 10px 0 10px;
+	background:#efefef;
+	border-style: none;
+}
+
+#orderBtn:hover, #cancelBtn:hover {
+	background:#c8a454;
+}

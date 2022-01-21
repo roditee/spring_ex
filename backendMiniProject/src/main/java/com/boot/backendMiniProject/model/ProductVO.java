@@ -1,0 +1,60 @@
+package com.boot.backendMiniProject.model;
+
+import java.util.Date;
+
+public class ProductVO {
+	private String prdNo;
+	private String prdName;
+	private int prdPrice;
+	private int prdStock;
+	private String prdDescript;
+	private String ctgId;
+	private Date prdDate;
+	
+	
+	public String getPrdNo() {
+		return prdNo;
+	}
+	public void setPrdNo(String prdNo) {
+		this.prdNo = prdNo;
+	}
+	public String getPrdName() {
+		return prdName;
+	}
+	public void setPrdName(String prdName) {
+		this.prdName = prdName;
+	}
+	public int getPrdPrice() {
+		return prdPrice;
+	}
+	public void setPrdPrice(int prdPrice) {
+		this.prdPrice = prdPrice;
+	}
+	public int getPrdStock() {
+		return prdStock;
+	}
+	public void setPrdStock(int prdStock) {
+		this.prdStock = prdStock;
+	}
+	public String getPrdDescript() {
+		return prdDescript;
+	}
+	public void setPrdDescript(String prdDescript) {
+		this.prdDescript = prdDescript;
+	}
+	public String getCtgId() {
+		return ctgId;
+	}
+	public void setCtgId(String ctgId) {
+		this.ctgId = ctgId;
+	}
+	public Date getPrdDate() {
+		return prdDate;
+	}
+	public void setPrdDate(Date prdDate) {
+		this.prdDate = prdDate;
+	}
+
+	
+	
+}

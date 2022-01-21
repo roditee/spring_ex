@@ -1,0 +1,289 @@
+/* join.css */
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+#userManageBtn {
+  visibility: hidden;
+}
+
+hr {
+	margin:20px 0;
+}
+div.create {
+  width: 800px;
+  text-align: center;
+  padding: 30px;
+  border-bottom: 1px solid #7e5c48;
+  margin: auto;
+}
+
+table {
+  height: 300px;
+  width: 900px;
+  border-top: 3px solid #7e5c48;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td {
+  border-bottom: 1px dotted black;
+}
+
+caption {
+  text-align: left;
+}
+
+.col1 {
+  background-color: #e0d0c0;
+  padding: 10px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #4a2f2f;
+  text-align: center;
+}
+
+.col2 {
+  text-align: left;
+  padding: 5px;
+}
+
+.btn1 {
+  height: 25px;
+  width: 80px;
+  color: #4a2f2f;
+  background-color: #e0d0c0;
+  border-color: white;
+}
+
+.btn2 {
+  height: 27px;
+  width: 120px;
+  color: #4a2f2f;
+  background-color: #e0d0c0;
+  border-color: white;
+}
+
+.btn3 {
+  height: 35px;
+  width: 150px;
+  background-color: #e0d0c0;
+  border: 2px solid white;
+}
+
+.btn4 {
+  height: 35px;
+  width: 150px;
+  background-color: #e0d0c0;
+  border: 2px solid white;
+}
+
+.btn5 {
+  height: 30px;
+  background-color: #e0905b;
+  border: 2px solid white;
+  padding: 5px 5px;
+  border-radius: 12px;
+  margin: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.btn1:hover {
+  background-color: #d1a880;
+  color: black;
+  border: 2px solid #d7af86;
+}
+
+.btn2:hover {
+  background-color: #d1a880;
+  color: black;
+  border: 2px solid #d7af86;
+}
+
+.btn3:hover {
+  background-color: #d1a880;
+  color: white;
+  border: 2px solid #d7af86;
+}
+
+.btn4:hover {
+  background-color: #d1a880;
+  color: white;
+  border: 2px solid #d7af86;
+}
+
+.btn5:hover {
+  background-color: #d1a880;
+  padding: 5px 5px;
+  color: white;
+  border: 3px solid #d7af86;
+  border-radius: 12px;
+  margin: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.bktop {
+  background-color: #84d141;
+  bottom: 10px;
+  color: #000;
+  display: none;
+  padding: 10px 14px 5px;
+  position: fixed;
+  right: 30px;
+  text-decoration: none;
+  z-index: 99999;
+}
+
+p {
+  font-size: 0.7em;
+}
+
+.g {
+  font-size: 0.7em;
+}
+
+.c {
+  font-size: 0.7em;
+}
+
+.a {
+  font-size: 0.7em;
+}
+
+.num {
+  color: red;
+}
+
+.black_overlay:hover {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity = 80);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.white_content {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  border: 1px solid #000000;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.white_content::-webkit-scrollbar {
+  width: 10px;
+}
+.white_content::-webkit-scrollbar-thumb {
+  background-color: #d1a880;
+  border-radius: 10px;
+}
+.white_content::-webkit-scrollbar-track {
+  background-color: #f2dcac;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.agreebox::-webkit-scrollbar {
+  width: 10px;
+}
+.agreebox::-webkit-scrollbar-thumb {
+  background-color: #d1a880;
+  border-radius: 10px;
+}
+.agreebox::-webkit-scrollbar-track {
+  background-color: #f2dcac;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+/* toTopBtn */
+#toTopBtn2 {
+  position: fixed;
+  top: 90%;
+  left: 90%;
+  font-size: 50px;
+}
+
+#toTopBtn2:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.errMsg {
+  visibility: hidden;
+}
+
+#idError {
+  padding-left: 8px;
+  display: inline;
+  color: red;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 30px;
+}
+
+#zipcode {
+  margin-bottom: 8px;
+}
+
+#address1 {
+  margin-bottom: 8px;
+}
+
+#address2 {
+  margin-bottom: 8px;
+}
+
+.col2 p {
+  display: inline;
+}
+
+select {
+  height: 30px;
+}
+
+.keyBtn {
+	visibility:hidden;
+}
+
+#footer {
+  padding: 35px 150px;
+}
+
+/* chatbot */
+#chatbot {
+  position: fixed;
+  top: 84%;
+  left: 90%;
+  font-size: 50px;
+}
+
+#chatbot:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}

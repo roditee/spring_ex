@@ -1,0 +1,117 @@
+/* login.css */
+#userManageBtn {
+  visibility: hidden;
+}
+
+#login {
+  width: 567px;
+  height: 835px;
+  margin: 45px auto 90px auto;
+  text-align: center;
+  background-color: rgb(149 99 99);
+  border-top-left-radius: 460px;
+  border-bottom-right-radius: 570px;
+  padding-top: 50px;
+}
+
+/************* loginHeader ************/
+#loginHeader * {
+  vertical-align: middle;
+  padding: 55px 0 30px 0;
+}
+
+#loginLogoImg {
+  width: 120px;
+  height: 176px;
+}
+
+/************* login ************/
+#loginForm {
+  padding: 0px 30px 35px 30px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+#loginError {
+  padding-bottom: 20px;
+  visibility: hidden;
+  color: #d40000;
+  font-weight: bold;
+}
+
+#loginForm > input[type="text"], #loginForm > input[type="password"] {
+  display: block;
+  border-radius: 16px;
+  background: #efe4d7;
+}
+
+#loginForm > input[type="submit"] {
+  display: block;
+  border-radius: 16px;
+  background: #ba9b58;
+}
+
+#id,
+#pwd {
+  width: 337px;
+  height: 60px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  margin: 0 auto 14px auto;
+}
+
+#submit {
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+  width: 333px;
+  height: 53px;
+  margin: 35px auto 14px auto;
+}
+
+#loginAnchor {
+  width: 333px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+#loginAnchor a {
+  color: black;
+  font-size: 17px;
+}
+
+#socialLiogin {
+  padding-top: 25px;
+}
+
+#socialLoginBtn {
+  padding-top: 12px;
+}
+
+.socialBtn {
+  text-decoration: none;
+  color: #3a3a3a;
+  font-size: 38px;
+  padding-right: 8px;
+}
+
+/* footer */
+#footer {
+  padding: 35px 150px;
+}
+
+/* chatbot */
+#chatbot {
+  position: fixed;
+  top: 84%;
+  left: 90%;
+  font-size: 50px;
+}
+
+#chatbot:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}

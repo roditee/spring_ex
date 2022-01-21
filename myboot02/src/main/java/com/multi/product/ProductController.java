@@ -24,12 +24,12 @@ public class ProductController {
 	}
 	
 	// 전체 상품 조회
-	@RequestMapping("/product/listAllProduct")
-	public String listAllProduct(Model model) {
-		ArrayList<ProductVO> prdList = service.listAllProduct();
-		model.addAttribute("prdList", prdList);		
-		return "product/productListView";
-	}
+//	@RequestMapping("/product/listAllProduct")
+//	public String listAllProduct(Model model) {
+//		ArrayList<ProductVO> prdList = service.listAllProduct();
+//		model.addAttribute("prdList", prdList);		
+//		return "product/productListView";
+//	}
 	
 	// 상품 등록폼으로 이동
 	@RequestMapping("/product/newProductForm")

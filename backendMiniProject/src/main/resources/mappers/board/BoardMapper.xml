@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.backendMiniProject.dao.IBoardDAO">
+  		<resultMap id="boardResult" type="com.boot.backendMiniProject.model.BoardVO">
+  			<result property="boardNo" column="boardNo" />
+  			<result property="memId" column="memId" />
+  			<result property="memMbti" column="memMbti" />
+  			<result property="boardTitle" column="boardTitle" />
+  			<result property="boardContent" column="boardContent" />
+  			<result property="boardImg" column="boardImg" />
+  		</resultMap> 
+  
+  		<!-- 전체 상품 조회 -->
+  		<select id="listAllBoard" resultMap="boardResult">
+  			SELECT * FROM board ORDER BY boardNo
+  		</select>  
+  		
+  		<!-- 상품 등록  -->
+  		<insert id="insertBoard" parameterType="com.boot.backendMiniProject.model.BoardVO">
+  			INSERT INTO board (boardNo, memId, memMbti, boardTitle, boardContent, boardImg)
+  			VALUES (#{boardNo}, #{memId}, #{memMbti}, #{boardTitle}, #{boardContent}, #{boardImg })
+  		</insert>
+  		
+  		<!-- 상품 상세 정보 조회  -->
+  		<select id="detailViewBoard" parameterType="string" resultType="com.boot.backendMiniProject.model.BoardVO">
+  			SELECT * FROM board WHERE boardNo=#{boardNo}  		
+  		</select>
+  		
+  		<!-- 상품 정보 수정 : 수정된 정보 DB에 저장 (상품번호는 수정 안 함 : 기본키 변경 안 함) -->
+  		<update id="updateBoard" parameterType="com.boot.backendMiniProject.model.BoardVO">
+  			UPDATE product SET memMbti=#{memMbti}, boardTitle=#{boardTitle}, boardContent=#{boardContent}, boardImg=#{boardImg} 
+  			WHERE boardNo=#{boardNo}
+  		</update>
+  		
+  		<!-- 상품 정보 삭제  -->
+  		<delete id="deleteBoard"  parameterType="string">
+  			DELETE FROM board WHERE boardNo=#{boardNo}
+  		</delete>
+  		
+  		<!-- 상품번호 중복 확인 -->
+  		<select id="boardNoCheck" resultType="string" parameterType="string">
+  			SELECT boardNo FROM board WHERE boardNo=#{boardNo}
+  		</select>
+  		
+  		<!-- 상품 검색  -->
+  		<select id="boardSearch" resultMap="boardResult" parameterType="hashmap">
+  			SELECT * FROM board WHERE
+  			<choose>
+  				<when test="type != null and type.equals('memId')">
+  					memId LIKE CONCAT('%', #{keyword}, '%')
+  				</when>  				
+  				<when test="type != null and type.equals('memMbti')">
+  					memMbti LIKE CONCAT('%', #{keyword}, '%')
+  				</when>
+  			</choose>
+  		</select>
+  </mapper>
+  

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+#A {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.B {
+		margin: 0 auto;
+	    font-size: 50px;
+	    padding: 30px;
+	    background-color: #ebdaa6;
+	    color: #795548;
+	    border-radius: 10px;
+}
+
+#searchResultbox {
+		padding: 40px;
+    	margin-left: 400px;
+}
+
+
+#A input[type=text] {
+    color: #66483d;
+    font-size: 32px;
+    border-radius: 11px;
+    text-align: center;
+}
+
+#A td{
+	padding: 20px 30px;
+}
+
+#button1 {
+	
+    border-radius: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+}
+
+#A input[type=submit] {
+    color: #66483d;
+    font-size: 25px;
+    background-color: wheat;
+    border-radius: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+}
+
+#A input[type=reset] {
+    color: #66483d;
+    font-size: 25px;
+    background-color: wheat;
+    border-radius: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+}
+
+#h3 > h3 {
+	text-align: center;
+    font-size: 70px;
+    color: #ab7636;
+    background-color: #ebdaa6;
+    border-radius: 50px;
+    padding: 30px;
+	}

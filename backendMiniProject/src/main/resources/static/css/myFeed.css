@@ -1,0 +1,268 @@
+/* myFeed.css */
+
+#header h2 {
+  font-size: 45px;
+}
+
+#userManageBtn > a {
+  font-size: 27px;
+}
+
+#footerInfo h2 {
+  font-size: 33px;
+}
+
+/************* profile ************/
+#feedTitle {
+  padding: 3% 0 2% 3%;
+  font-size: 40px;
+}
+
+#profile {
+  padding: 115px;
+}
+
+#profile::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#profileGroup {
+  padding-left: 48px;
+  padding-top: 52px;
+}
+
+#profileImgGroup {
+  width: 300px;
+  height: 350px;
+  float: left;
+}
+
+#profileImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 80px;
+}
+
+#profileEdit {
+  width: 300px;
+  text-align: center;
+  padding-top: 23px;
+  color: #3a281d;
+  font-weight: bold;
+  font-size: 21px;
+}
+#profileEdit div:hover {
+  opacity: 0.8;
+}
+
+#profileInfoGroup {
+  float: left;
+  background: #9b8373;
+  width: 820px;
+  margin-left: 65px;
+  padding-left: 25px;
+}
+
+#profileInfo {
+  padding-bottom: 10px;
+  border-bottom: solid 1px black;
+  margin-bottom: 20px;
+}
+
+#profileInfo > h1 {
+  font-size: 42px;
+}
+
+#followGroup {
+  padding-top: 7px;
+  padding-left: 2px;
+}
+
+#profileInfo h3 {
+  display: inline;
+}
+
+/************* keyword ************/
+#profileKeyword {
+  width: 850px;
+}
+
+#profileKeyword button {
+  height: 40px;
+  font-size: 18px;
+}
+
+#EditKeywordBtn {
+  float: left;
+  margin-right: 14px;
+  padding: 0 10px;
+}
+
+#myKeywordGroup {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.myKeyword {
+  border: solid 1px gray;
+  border-radius: 50px;
+  line-height: 40px;
+  padding: 0 15px;
+  margin: 0 5px 7px 5px;
+  background: #ebc14b;
+  border-style: none;
+}
+
+.myKeyword:hover {
+  background: #c0633f;
+}
+
+/************* profileMusic ************/
+#profileMusic {
+  padding: 15px 115px 115px 115px;
+}
+
+#profileMusic h1 {
+  padding-left: 25px;
+  padding-bottom: 25px;
+  font-size: 28px;
+}
+
+#musicBtnGroup {
+  padding-left: 25px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+.musicBtn {
+  width: 500px;
+  height: 100px;
+  margin: 0 15px;
+  border-radius: 50px;
+  font-size: 20px;
+  background: #ebc14b;
+  border-style: none;
+}
+
+.musicBtn:hover {
+	background: #c0633f;
+}
+
+/************* 李� 紐⑸줉 ************/
+#wishGroup {
+  margin: 0 115px 115px 115px;
+  overflow: hidden;
+  border-left: 1px solid #a3a3a3;
+  border-right: 1px solid #969696;
+}
+
+#wishGroup h1 {
+  padding-left: 25px;
+  padding-bottom: 7px;
+  font-size: 28px;
+}
+
+#wishList {
+  position: relative;
+  width: 2400px;
+  height: 240px;
+  padding: 0 12px;
+}
+
+.wishItems {
+  width: 180px;
+  height: 215px;
+  background: #c2d7de;
+  border-radius: 35px;
+  border: solid gray 1px;
+  margin: 10px;
+  display: inline;
+}
+
+/************* 李� 紐⑸줉 �뒳�씪�씠�뱶 ************/
+#wishBtnGroup {
+  position: relative;
+  z-index: 10;
+}
+
+#prevWish {
+  position: absolute;
+  top: 95px;
+  left: 1%;
+  width: 50px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+#nextWish {
+  position: absolute;
+  top: 95px;
+  right: 1%;
+  width: 50px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+#prevWish:hover {
+  opacity: 0.8;
+}
+#nextWish:hover {
+  opacity: 0.8;
+}
+
+/************* �궡 寃뚯떆湲� ************/
+#myPostGroup {
+  padding: 0 115px 115px 115px;
+}
+
+#myPostGroup h1 {
+  padding-left: 25px;
+  padding-bottom: 7px;
+  font-size: 28px;
+}
+
+#postList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postItems {
+  width: 363px;
+  height: 500px;
+  background: #c2d7de;
+  border-radius: 35px;
+  border: solid gray 1px;
+  margin: 10px 30px;
+}
+
+#seeMoreBox {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#seeMore {
+  width: 340px;
+  height: 70px;
+  border: solid black 3px;
+  background: #d5dbe2;
+  font-size: 30px;
+}
+
+#seeMore:hover {
+  background: #c2d7de;
+}
+
+/************* chatbot ************/
+#chatbot {
+  position: fixed;
+  top: 84%;
+  left: 90%;
+  font-size: 50px;
+}
+
+#chatbot:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
