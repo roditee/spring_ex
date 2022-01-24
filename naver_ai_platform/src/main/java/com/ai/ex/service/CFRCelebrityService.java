@@ -23,9 +23,9 @@ import com.ai.ex.model.CelebrityVO;
 public class CFRCelebrityService {
 	public ArrayList<CelebrityVO> clovaFaceRecogCel(String filePathName) {
 		//StringBuffer reqStr = new StringBuffer();
-        String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
-
+        String clientId = "6to327c88d";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "HqfsYXHJrk5mWcv3hgJQq3qk94YebLJ0knjw5M1k";//애플리케이션 클라이언트 시크릿값";
+        
         ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
 
         try {
@@ -139,3 +139,10 @@ public class CFRCelebrityService {
 	}
 	
 }
+
+
+
+
+
+
+

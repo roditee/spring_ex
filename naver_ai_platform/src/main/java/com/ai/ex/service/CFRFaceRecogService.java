@@ -23,14 +23,14 @@ import com.ai.ex.model.FaceVO;
 public class CFRFaceRecogService {
 	public ArrayList<FaceVO> faceRecog(String filePathName) {
 		 StringBuffer reqStr = new StringBuffer();
-	        String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
-	        String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
-
-	        ArrayList<FaceVO> faceList = faceList = new ArrayList<FaceVO>();
+	        String clientId = "6to327c88d";//애플리케이션 클라이언트 아이디값";
+	        String clientSecret = "HqfsYXHJrk5mWcv3hgJQq3qk94YebLJ0knjw5M1k";//애플리케이션 클라이언트 시크릿값";
 	        
+	        ArrayList<FaceVO> faceList = faceList = new ArrayList<FaceVO>();
+
 	        try {
 	            String paramName = "image"; // 파라미터명은 image로 지정
-	            // String imgFile = "C:/ai/family.jpg";
+	            //String imgFile = "C:/ai/family.jpg";
 	            String imgFile = filePathName;
 	            File uploadFile = new File(imgFile);
 	            String apiURL = "https://naveropenapi.apigw.ntruss.com/vision/v1/face"; // 얼굴 감지
@@ -169,3 +169,13 @@ public class CFRFaceRecogService {
 		return faceList;
 	}	
 }
+
+
+
+
+
+
+
+
+
+

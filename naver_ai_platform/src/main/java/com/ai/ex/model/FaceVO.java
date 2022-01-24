@@ -59,4 +59,5 @@ public class FaceVO {
 		this.poseConf = poseConf;
 	}
 	
+	
 }
