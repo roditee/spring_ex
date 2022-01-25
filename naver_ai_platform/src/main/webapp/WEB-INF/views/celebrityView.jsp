@@ -9,7 +9,7 @@
 		<title>유명인 얼굴 인식</title>
 	</head>
 	<body>
-		<<!-- 서버로 파일 전송  -->
+		<!-- 서버로 파일 전송  -->
 		<h3>유명인 얼굴 인식</h3>
 		<form id="celebrityForm" method="post" action="<c:url value='/faceRecogCel'/>" enctype="multipart/form-data">
 			파일 : <input type="file" id="uploadFile" name="uploadFile"> 

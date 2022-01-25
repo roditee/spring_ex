@@ -15,25 +15,25 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
-import com.ai.ex.model.CelebrityVO;
+import com.ai.ex.model.PoseVO;
 
 @Service
-public class CFRCelebrityService {
-	public ArrayList<CelebrityVO> clovaFaceRecogCel(String filePathName) {
-		//StringBuffer reqStr = new StringBuffer();
+public class PoseEstimationService {
+	public ArrayList<PoseVO> poseEstimate(String filePathName) {
+		
+		StringBuffer reqStr = new StringBuffer();
         String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
+        ArrayList<PoseVO> poseList = new ArrayList<PoseVO>();
         
-        ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
-
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
-           // String imgFile = "C:/ai/song.jpg";  // 전송할 이미지 파일
-            String imgFile = filePathName; 
+            String imgFile = filePathName;
             File uploadFile = new File(imgFile);
-            String apiURL = "https://naveropenapi.apigw.ntruss.com/vision/v1/celebrity"; // 유명인 얼굴 인식
+            String apiURL = "https://naveropenapi.apigw.ntruss.com/vision-pose/v1/estimate"; // 사람 인식
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
             con.setUseCaches(false);
@@ -80,9 +80,10 @@ public class CFRCelebrityService {
                     response.append(inputLine);
                 }
                 br.close();
-                System.out.println(response.toString()); // 서버로부터 받은 결과를 콘솔에 출력 (JSON 형태)
-                // jsonToVoList() 메소드 호출하면서 결과 json 문자열 전달
-                celList = jsonToVoList(response.toString());
+                System.out.println(response.toString());
+                
+                // JSON 문자열 추출 결과 받음
+                poseList = jsonToVoList(response.toString());
             } else {
                 System.out.println("error !!!");
             }
@@ -90,56 +91,54 @@ public class CFRCelebrityService {
             System.out.println(e);
         }
         
-        // CelebrityVO 리스트 반환
-        return celList;
+        return poseList;
 	}
 	
-	// API 서버로부터 받은 JSON 형태의 결과 데이터를 전달받아서 value와 confidence 추출하고
-	// VO 리스트 만들어 반환하는 함수
-	public ArrayList<CelebrityVO> jsonToVoList(String jsonResultStr){
-		ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
+	// API 서버로부터 받은 JSON 형태의 결과 데이터를 전달받아서 index, x, y 추출하고
+	// PoseVO 리스트 만들어 반환하는 함수
+	public ArrayList<PoseVO> jsonToVoList(String jsonResultStr){
+		ArrayList<PoseVO> poseList = new ArrayList<PoseVO>();
+		double x, y;
 		
 		try {
-			//JSON 형태의 문자열에서 JSON 오브젝트 "faces" 추출해서 JSONArray에 저장
+			// JSON 형태의 문자열에서 JSON 오브젝트 "predictions" 추출해서 JSONArray에 저장
+			// x, y 추출
 			JSONParser jsonParser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonResultStr);
-			JSONArray celebrityArray = (JSONArray) jsonObj.get("faces");			
+			JSONArray poseArray = (JSONArray) jsonObj.get("predictions");			
+			JSONObject obj0 = (JSONObject) poseArray.get(0);
 			
-			// JSONArray의 각 요소에서 value와 confidence 추출하여
-			// CelebrityVO 담아 리스트에 추가
-			if(celebrityArray != null) {
-				// value와 confidence 추출
-				// JSONArray  각 요소에서 value와 confidence 추출
-				for(int i=0; i < celebrityArray.size(); i++){
-					JSONObject tempObj = (JSONObject) celebrityArray.get(i);
-					tempObj = (JSONObject) tempObj.get("celebrity");
-					String value = (String) tempObj.get("value");
-					double confidence = (double) tempObj.get("confidence");
-					
-					// VO에 저장해서 리스트에 추가
-					CelebrityVO vo = new CelebrityVO();
-					vo.setValue(value);
-					vo.setConfidence(confidence);
-					
-					celList.add(vo);					
-				}					
-			} else {
-				//유명인을 찾지 못한 경우 ("faces" : [])
-				CelebrityVO vo = new CelebrityVO();
-				vo.setValue("없음");
-				vo.setConfidence(0);				
-			}			
+			for(int i=0; i<18; i++) {
+				// 신체 각 부위 이름이 "0", "1", 문자이므로  정수 i를 문자열로 변환
+				// String.valueOf(i) 사용해서 문자열로 변환 또는 i+"" (정수+ 문자열 : 문자열 연산해서 결과 문자열)
+				//if(obj0.get(String.valueOf(i)) != null) {
+				if(obj0.get(i +"") != null) {
+					//JSONObject tempObj = (JSONObject) obj0.get(String.valueOf(i));
+					JSONObject tempObj = (JSONObject) obj0.get(i+"");
+					x = (double) tempObj.get("x");
+					y = (double) tempObj.get("y");
+				} else {
+					x = 0;
+					y = 0;
+				}
+				// VO에 저장하고
+				PoseVO vo = new PoseVO();
+				vo.setIndex(i);
+				vo.setX(x);
+				vo.setY(y);			
+			
+				// 리스트에 추가
+				poseList.add(vo);			
+			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return celList;
+		return poseList;
 	}
-	
 }
-
 
 
 

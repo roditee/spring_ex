@@ -17,23 +17,22 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Service;
 
-import com.ai.ex.model.CelebrityVO;
+import com.ai.ex.model.ObjectVO;
 
 @Service
-public class CFRCelebrityService {
-	public ArrayList<CelebrityVO> clovaFaceRecogCel(String filePathName) {
-		//StringBuffer reqStr = new StringBuffer();
+public class ObjectDetectionService {
+	public  ArrayList<ObjectVO> objectDetect(String filePathName) {
+		StringBuffer reqStr = new StringBuffer();
         String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
         
-        ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
+        ArrayList<ObjectVO> objectList = new ArrayList<ObjectVO>();
 
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
-           // String imgFile = "C:/ai/song.jpg";  // 전송할 이미지 파일
-            String imgFile = filePathName; 
+            String imgFile = filePathName;
             File uploadFile = new File(imgFile);
-            String apiURL = "https://naveropenapi.apigw.ntruss.com/vision/v1/celebrity"; // 유명인 얼굴 인식
+            String apiURL = "https://naveropenapi.apigw.ntruss.com/vision-obj/v1/detect"; // 객체 인식
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
             con.setUseCaches(false);
@@ -80,65 +79,68 @@ public class CFRCelebrityService {
                     response.append(inputLine);
                 }
                 br.close();
-                System.out.println(response.toString()); // 서버로부터 받은 결과를 콘솔에 출력 (JSON 형태)
-                // jsonToVoList() 메소드 호출하면서 결과 json 문자열 전달
-                celList = jsonToVoList(response.toString());
-            } else {
-                System.out.println("error !!!");
-            }
+                System.out.println(response.toString());
+                objectList = jsonToVoList(response.toString());
+            } 
+			/*   else {
+			    System.out.println("error !!!");
+			}*/
         } catch (Exception e) {
             System.out.println(e);
-        }
+        }		
         
-        // CelebrityVO 리스트 반환
-        return celList;
+        return objectList;
 	}
 	
-	// API 서버로부터 받은 JSON 형태의 결과 데이터를 전달받아서 value와 confidence 추출하고
-	// VO 리스트 만들어 반환하는 함수
-	public ArrayList<CelebrityVO> jsonToVoList(String jsonResultStr){
-		ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
+	// API 서버로부터 받은 JSON 형태의 데이톨부터 names과 x1,x2,y1,y2 추출해서
+	// VO 리스트 만들어 반환	
+	public ArrayList<ObjectVO> jsonToVoList(String jsonResultStr){
+		ArrayList<ObjectVO> objectList = new ArrayList<ObjectVO>();
 		
 		try {
-			//JSON 형태의 문자열에서 JSON 오브젝트 "faces" 추출해서 JSONArray에 저장
+			// JSON 형태의 문자열에서 JSON 오브젝트 "predictions" 추출해서 JSONArray에 저장
 			JSONParser jsonParser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonResultStr);
-			JSONArray celebrityArray = (JSONArray) jsonObj.get("faces");			
+			JSONArray poseArray = (JSONArray) jsonObj.get("predictions");			
+			JSONObject obj0 = (JSONObject) poseArray.get(0);			
 			
-			// JSONArray의 각 요소에서 value와 confidence 추출하여
-			// CelebrityVO 담아 리스트에 추가
-			if(celebrityArray != null) {
-				// value와 confidence 추출
-				// JSONArray  각 요소에서 value와 confidence 추출
-				for(int i=0; i < celebrityArray.size(); i++){
-					JSONObject tempObj = (JSONObject) celebrityArray.get(i);
-					tempObj = (JSONObject) tempObj.get("celebrity");
-					String value = (String) tempObj.get("value");
-					double confidence = (double) tempObj.get("confidence");
-					
-					// VO에 저장해서 리스트에 추가
-					CelebrityVO vo = new CelebrityVO();
-					vo.setValue(value);
-					vo.setConfidence(confidence);
-					
-					celList.add(vo);					
-				}					
-			} else {
-				//유명인을 찾지 못한 경우 ("faces" : [])
-				CelebrityVO vo = new CelebrityVO();
-				vo.setValue("없음");
-				vo.setConfidence(0);				
-			}			
+			JSONArray nameArray = (JSONArray) obj0.get("detection_names");	
+			JSONArray boxArray = (JSONArray) obj0.get("detection_boxes");	
+			
+			for(int i=0; i<nameArray.size(); i++) {
+				// name 추출
+				String name = (String) nameArray.get(i);
+				
+				//x1, y1, x2, y2 추출
+				JSONArray box = (JSONArray) boxArray.get(i);
+				double x1 =(double) box.get(0);
+				double y1 =(double) box.get(1);
+				double x2 =(double) box.get(2);
+				double y2 =(double) box.get(3);
+				
+				// VO에 저장
+				ObjectVO vo = new ObjectVO();
+				vo.setName(name);
+				vo.setX1(x1);
+				vo.setY1(y1);
+				vo.setX2(x2);
+				vo.setY2(y2);
+				
+				//리스트에 추가
+				objectList.add(vo);
+			}
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
 		
-		return celList;
+		return objectList;
 	}
-	
 }
+
+
+
 
 
 

@@ -16,6 +16,10 @@ import com.ai.ex.model.FaceVO;
 import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
 import com.ai.ex.service.OCRService;
+import com.ai.ex.service.ObjectDetectionService;
+import com.ai.ex.service.PoseEstimationService;
+import com.ai.ex.service.STTService;
+import com.ai.ex.service.TTSService;
 
 @Controller
 public class APIController {
@@ -27,6 +31,18 @@ public class APIController {
 	
 	@Autowired
 	private OCRService ocrService;
+	
+	@Autowired
+	private PoseEstimationService poseService;
+	
+	@Autowired
+	private ObjectDetectionService objService;
+	
+	@Autowired
+	private STTService sttService;
+	
+	@Autowired
+	private TTSService ttsService;
 	
 	// index 페이지로 이동
 	@RequestMapping("/")
@@ -112,12 +128,65 @@ public class APIController {
 	
 	// OCR
 	// (1) OCR API 서비스 호출 결과를 콘솔에 출력
+	/*@RequestMapping("/clovaOCR")
+	public void clovaOCR() {
+		ocrService.clovaOCRService();
+	}   -->  APIRestController에서 처리
+	
+	*/	
+	
 	// 변경 ->
 	// (2) ocrView.jsp 페이지로 이동
 	@RequestMapping("/clovaOCRForm")
-	public String clovaOCR() {
+	public String clovaOCRForm() {
 		return "ocrView";
 	}
+	
+	// 포즈 인식
+	// (1) 결과를 콘솔에 출력
+	// 변경 
+	@RequestMapping("/poseForm")
+	public String poseForm() {
+		return "poseView";
+	}
+	
+	// 객체 탐지
+	// (1) 결과를 콘솔에 출력
+	/*	@RequestMapping("/objectDetect")
+		public void objectDetect() {
+			objService.objectDetect();
+		}*/
+	
+	@RequestMapping("/objectForm")
+	public String objectForm() {
+		return "objectView";
+	}
+	
+	// Speech-To-Text
+	@RequestMapping("/clovaSTTForm")
+	public String clovaSTTForm() {
+		return "sttView";
+	}
+	
+	// 언어 선택 추가
+	// Speech-To-Text
+	@RequestMapping("/clovaSTTForm2")
+	public String clovaSTTForm2() {
+		return "sttView2";
+	}
+	
+	// TTS : 텍스트를 음성 파일로 변환
+	// (1) 결과를 upload 폴더에 mp3 파일로 저장
+	/*@RequestMapping("/clovaTTS")
+	public void clovaTTS() {
+		ttsService.clovaTextToSpeech();
+	}*/
+	
+	@RequestMapping("/clovaTTSForm")
+	public String clovaTTSForm() {
+		return "ttsView";
+	}
+	
 }
 
 
