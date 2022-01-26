@@ -210,6 +210,12 @@ public class APIController {
 	public String chatbotForm2() {
 		return "chatForm2";
 	}
+	
+	// 채팅창 + 음성 질문
+	@RequestMapping("/chatbotForm3")
+	public String chatbotForm3() {
+		return "chatForm3";
+	}
 }
 
 

@@ -232,8 +232,15 @@ public class APIRestController {
 		}
 
 		@RequestMapping("/chatbotCall")
-		public String  chatbotCall(@RequestParam("message") String message) {		
+		public String  chatbotCall(@RequestParam("message") String message ) {
 			String result = chatService.main(message);
 			return result;
+		}
+	
+		
+		@RequestMapping("/chatbotTTS")
+		public String  chatbotTTS(@RequestParam("message") String message ) {
+			String result = ttsService.chatbotTextToSpeech(message);
+			return result;  // voiceFileName;  // 저장된 음성 파일명 반환
 		}
 }
