@@ -19,8 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TTSService {
 	public void clovaTextToSpeech() {
-		String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
+		String clientId = "";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "";//애플리케이션 클라이언트 시크릿값";
         try {
         	
             String text = URLEncoder.encode("만나서 반갑습니다.", "UTF-8"); // 13자
