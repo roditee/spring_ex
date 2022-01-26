@@ -23,8 +23,8 @@ import com.ai.ex.model.ObjectVO;
 public class ObjectDetectionService {
 	public  ArrayList<ObjectVO> objectDetect(String filePathName) {
 		StringBuffer reqStr = new StringBuffer();
-        String clientId = "86au6kn68u";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "HFv2tMkPNhrTzOsxXJ5eGdteQfkWJC90UMnsQXeA";//애플리케이션 클라이언트 시크릿값";
+        String clientId = "";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "";//애플리케이션 클라이언트 시크릿값";
         
         ArrayList<ObjectVO> objectList = new ArrayList<ObjectVO>();
 

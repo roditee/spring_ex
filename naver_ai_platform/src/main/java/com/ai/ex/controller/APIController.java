@@ -15,6 +15,7 @@ import com.ai.ex.model.CelebrityVO;
 import com.ai.ex.model.FaceVO;
 import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
+import com.ai.ex.service.ChatbotService;
 import com.ai.ex.service.OCRService;
 import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
@@ -43,6 +44,9 @@ public class APIController {
 	
 	@Autowired
 	private TTSService ttsService;
+	
+	@Autowired
+	private ChatbotService chatService;
 	
 	// index 페이지로 이동
 	@RequestMapping("/")
@@ -186,7 +190,26 @@ public class APIController {
 	public String clovaTTSForm() {
 		return "ttsView";
 	}
+
 	
+	// 챗봇 : 질문 메시지 전송하고 결과 받아서 출력
+	// static : 객체를 생성해서 호출하는 것이 아닌, 클래스 이름으로 호출
+	/*@RequestMapping("/chatbot")
+	public void chatbot() {
+		String result = chatService.main("맡은 역할은");
+		System.out.println(result);
+	}*/
+		
+	@RequestMapping("/chatbotForm")
+	public String chatbotForm() {
+		return "chatForm";
+	}
+	
+	// 채팅창
+	@RequestMapping("/chatbotForm2")
+	public String chatbotForm2() {
+		return "chatForm2";
+	}
 }
 
 

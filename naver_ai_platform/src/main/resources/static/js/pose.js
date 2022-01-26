@@ -1,5 +1,5 @@
 /**
- * ocr.js
+ * pose.js
  */
  
  $(function(){

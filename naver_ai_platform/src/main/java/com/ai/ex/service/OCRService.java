@@ -19,8 +19,8 @@ import org.springframework.stereotype.Service;
 public class OCRService {
 	public String clovaOCRService(String filePathName) {
 		// API 복사
-		String apiURL = "https://64afaab81b78484b8a2d44a2784046eb.apigw.ntruss.com/custom/v1/13853/c14863f2795d026736fe4f3e1fbc1a6d2891b4f2346f36912b80e99613b67541/general";
-		String secretKey = "bGFSelNhcW9nT0FKQVNRcFFBUHViV3pia3pERHB1S2Q=";
+		String apiURL = "";
+		String secretKey = "";
 		String imageFile = filePathName;
 		String result = "";
 

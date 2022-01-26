@@ -17,5 +17,7 @@
 		<a href="clovaSTTForm">Speech To Text</a><br><br>
 		<a href="clovaSTTForm2">Speech To Text2 : 언어 선택 추가</a><br><br>
 		<a href="clovaTTSForm">Text To Speech</a><br><br>
+		<a href="chatbotForm">챗봇</a><br><br>
+		<a href="chatbotForm2">챗봇 : 채팅창</a><br><br>
 	</body>
 </html>

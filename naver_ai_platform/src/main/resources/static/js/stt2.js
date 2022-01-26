@@ -1,5 +1,5 @@
 /**
- * object.js
+ * stt2.js
  */
  
  $(function(){

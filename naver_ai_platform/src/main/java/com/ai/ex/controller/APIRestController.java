@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ai.ex.model.ObjectVO;
 import com.ai.ex.model.PoseVO;
+import com.ai.ex.service.ChatbotService;
 import com.ai.ex.service.OCRService;
 import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
@@ -33,6 +34,9 @@ public class APIRestController {
 	
 	@Autowired
 	private TTSService ttsService;
+	
+	@Autowired
+	private ChatbotService chatService;
 	
 	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	@RequestMapping("/clovaOCR")
@@ -226,5 +230,10 @@ public class APIRestController {
 			
 			return result;
 		}
-	
+
+		@RequestMapping("/chatbotCall")
+		public String  chatbotCall(@RequestParam("message") String message) {		
+			String result = chatService.main(message);
+			return result;
+		}
 }
