@@ -21,6 +21,7 @@ import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
 import com.ai.ex.service.STTService;
 import com.ai.ex.service.TTSService;
+import com.ai.ex.service.myChatbotMainService;
 
 @Controller
 public class APIController {
@@ -47,6 +48,9 @@ public class APIController {
 	
 	@Autowired
 	private ChatbotService chatService;
+	
+	@Autowired
+	private myChatbotMainService myChatService;
 	
 	// index 페이지로 이동
 	@RequestMapping("/")
@@ -216,15 +220,16 @@ public class APIController {
 	public String chatbotForm3() {
 		return "chatForm3";
 	}
+	
+	// 채팅창 + 음성 질문 + 이미지/멀티링크
+	@RequestMapping("/chatbotForm4")
+	public String chatbotForm4() {
+		return "chatForm4";
+	}
+	
+	// myChatbot
+	@RequestMapping("/myChatbotForm")
+	public String myChatbotForm() {
+		return "myChatbotForm";
+	}
 }
-
-
-
-
-
-
-
-
-
-
-

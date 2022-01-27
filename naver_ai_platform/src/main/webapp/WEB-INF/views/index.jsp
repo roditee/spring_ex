@@ -20,5 +20,7 @@
 		<a href="chatbotForm">챗봇</a><br><br>
 		<a href="chatbotForm2">챗봇2 : 채팅창</a><br><br>
 		<a href="chatbotForm3">챗봇3 : 채팅창 + 음성으로 질문</a><br><br>
+		<a href="chatbotForm4">챗봇4 : 채팅창 + 음성으로 질문 + 이미지/멀티링크 답변</a><br><br>
+		<a href="myChatbotForm">마이챗봇</a><br><br>
 	</body>
 </html>

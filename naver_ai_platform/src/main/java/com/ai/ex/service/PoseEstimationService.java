@@ -139,9 +139,3 @@ public class PoseEstimationService {
 		return poseList;
 	}
 }
-
-
-
-
-
-

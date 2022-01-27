@@ -12,11 +12,13 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ai.ex.model.ObjectVO;
 import com.ai.ex.model.PoseVO;
 import com.ai.ex.service.ChatbotService;
+import com.ai.ex.service.ChatbotService2;
 import com.ai.ex.service.OCRService;
 import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
 import com.ai.ex.service.STTService;
 import com.ai.ex.service.TTSService;
+import com.ai.ex.service.myChatbotMainService;
 
 @RestController
 public class APIRestController {
@@ -37,6 +39,12 @@ public class APIRestController {
 	
 	@Autowired
 	private ChatbotService chatService;
+	
+	@Autowired
+	private ChatbotService2 chatService2;
+	
+	@Autowired
+	private myChatbotMainService myChatService;
 	
 	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	@RequestMapping("/clovaOCR")
@@ -242,5 +250,20 @@ public class APIRestController {
 		public String  chatbotTTS(@RequestParam("message") String message ) {
 			String result = ttsService.chatbotTextToSpeech(message);
 			return result;  // voiceFileName;  // 저장된 음성 파일명 반환
+		}
+		
+		@RequestMapping("/chatbotCallImgLink")
+		public String  chatbotCallImgLink(@RequestParam("message") String message ) {
+			String result = chatService2.imgLinkMainService(message);
+			return result; // JSON 형태의 결과를 그대로 ajax로 응답으로 전송
+		}
+		
+		
+		
+		// myChatbot
+		@RequestMapping("/myChatbotCallImgLink")
+		public String  myChatbotCallImgLink(@RequestParam("message") String message ) {
+			String result = myChatService.imgLinkMainService(message);
+			return result; // JSON 형태의 결과를 그대로 ajax로 응답으로 전송
 		}
 }

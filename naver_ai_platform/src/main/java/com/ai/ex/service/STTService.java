@@ -78,8 +78,8 @@ public class STTService {
 	}
 	
 	public String clovaSpeechToText2(String filePathName, String language) {
-		String clientId = "6to327c88d";             // Application Client ID";
-        String clientSecret = "HqfsYXHJrk5mWcv3hgJQq3qk94YebLJ0knjw5M1k";     // Application Client Secret";
+		String clientId = "";             // Application Client ID";
+        String clientSecret = "";     // Application Client Secret";
         
         String result = "";
         
@@ -171,16 +171,3 @@ public class STTService {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
