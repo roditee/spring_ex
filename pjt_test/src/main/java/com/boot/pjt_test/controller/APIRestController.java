@@ -6,21 +6,18 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.boot.pjt_test.model.SearchVO;
 import com.boot.pjt_test.service.OCRService;
-import com.boot.pjt_test.service.SearchDictService;
 
 @RestController
 public class APIRestController {
 	
 	@Autowired
 	private OCRService ocrService;
-	
-	@Autowired
-	private SearchDictService searchService;
 	
 	// OCR 요청 받아서 서비스 호출하고 결과 받아서 반환
 	@RequestMapping("/clovaOCR")
@@ -54,12 +51,13 @@ public class APIRestController {
 	}
 	
 	// 검색
+	@ResponseBody
 	@RequestMapping("/searchDict")
 	public ArrayList<SearchVO>  searchDict() {		
 		ArrayList<SearchVO> searchList = new ArrayList<SearchVO>();
 		
 		// 서비스 반환 결과 저장
-		searchList = searchService.main("타이레놀");
+		searchList = ocrService.searchMedichine("타이레놀");
 		
 		return searchList;
 	}

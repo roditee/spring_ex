@@ -26,8 +26,21 @@
 		
 		<!-- 이미지 출력 (새로운 방법으로 알려줄 것임)  -->
 		<div id="image"></div>
-		
 		<br><br>
+		
+		
+		
+		<!-- 검색 -->
+		<input type="button" id="searchBtn" value="약물 검색하기">
+		<br><br>
+		
+		<!-- 결과 출력 -->
+		<div id="searchResultDiv"></div>
+		<br><br>
+		
+		<!-- 이미지 출력 (새로운 방법으로 알려줄 것임)  -->
+		<div id="resultImage"></div>
+		
 		<a href="/">index 페이지로 이동</a>
 		
 	</body>
