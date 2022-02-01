@@ -20,7 +20,7 @@
 			contentType: false,  // 필스
 			success:function(result){
 				$('#resultH3').text("OCR : 텍스트 추출 결과"); // 제목 출력
-				$('#resultDiv').text(result);  // 결과 텍스트 출력
+				$('#resultText').text(result);  // 결과 텍스트 출력
 				// 이미지 출력 : div에 append 시킴
 				$('#image').empty();
 				$('#image').append('<img src="/images/'+fileName+'"/>'); // 입력 이미지 출력
@@ -38,12 +38,11 @@
 	$('#searchBtn').on('click', function(event){
 		event.preventDefault();
 		alert("aaa");
-		var resultText = $('#resultH3');
 		
 		$.ajax({
 			url:"searchDict",
 			type:"post",
-			data: resultText,
+			data: {"resultText" : $('#resultText').text()},
 			dataType: "json",
 			success:function(data){
 				$('#searchResultDiv').html(data[0].name + "<br>" + data[0].link + "<br>" + data[0].description + "<br>" + data[0].thumbnail);

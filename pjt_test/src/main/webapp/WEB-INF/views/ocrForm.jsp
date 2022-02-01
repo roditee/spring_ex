@@ -21,7 +21,7 @@
 		
 		<!-- 결과 출력 (텍스트) -->
 		<h3 id="resultH3"></h3>
-		<div id="resultDiv"></div>
+		<div id="resultText"></div>
 		<br><br>
 		
 		<!-- 이미지 출력 (새로운 방법으로 알려줄 것임)  -->

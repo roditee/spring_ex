@@ -53,11 +53,11 @@ public class APIRestController {
 	// 검색
 	@ResponseBody
 	@RequestMapping("/searchDict")
-	public ArrayList<SearchVO>  searchDict() {		
+	public ArrayList<SearchVO>  searchDict(@RequestParam(value = "resultText") String resultText) {		
 		ArrayList<SearchVO> searchList = new ArrayList<SearchVO>();
 		
 		// 서비스 반환 결과 저장
-		searchList = ocrService.searchMedichine("타이레놀");
+		searchList = ocrService.searchMedichine(resultText);
 		
 		return searchList;
 	}
