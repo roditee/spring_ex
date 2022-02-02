@@ -52,6 +52,12 @@
 				var img = "<img src='" + data[0].thumbnail + "'/>";
 				$('#resultImage').empty();
 				$('#resultImage').append(img);
+				
+				
+				var aaaaa = data[0].description.substring(data[0].description.indexOf("[외형정보]"), data[0].description.indexOf("[성분정보]"));
+				var bbbbb = data[0].description.substring(data[0].description.indexOf("[저장방법]"));
+				console.log(aaaaa);
+				console.log(bbbbb);
 			},
 			error:function(){
 				alert("오류가 발생했습니다.")
