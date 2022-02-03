@@ -14,5 +14,8 @@
 		
 		<a href="crawerView">크롤링</a>
 		<br><br>
+		
+		<hr>
+		<a href="search">검색</a>
 	</body>
 </html>

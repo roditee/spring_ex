@@ -18,4 +18,5 @@ public class MainController {
 	public String clovaOCRForm() {
 		return "ocrForm";
 	}
+	
 }
