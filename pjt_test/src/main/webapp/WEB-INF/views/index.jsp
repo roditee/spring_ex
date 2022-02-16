@@ -17,5 +17,15 @@
 		
 		<hr>
 		<a href="search">검색</a>
+		<br><br>
+		
+		<hr>
+		<a href="webNotification">알림</a>
+		<br><br>
+		
+		<hr>
+		<a href="calendarView">캘린더</a>
+		<br><br>
+		
 	</body>
 </html>

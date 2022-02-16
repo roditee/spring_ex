@@ -19,4 +19,9 @@ public class MainController {
 		return "ocrForm";
 	}
 	
+	@RequestMapping("/webNotification")
+	public String webNotification() {
+		return "webNotification";
+	}
+	
 }
