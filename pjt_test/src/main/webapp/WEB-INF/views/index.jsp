@@ -28,7 +28,10 @@
 		<br><br>
 		
 		<hr>
-		<a href="notificationTest">캘린더</a>
+		<a href="notificationTest">알림</a>
+		<br><br>
+		
+		<a href="crawerView2">크롤링2</a>
 		<br><br>
 	</body>
 </html>
