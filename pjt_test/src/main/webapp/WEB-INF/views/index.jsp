@@ -27,5 +27,8 @@
 		<a href="calendarView">캘린더</a>
 		<br><br>
 		
+		<hr>
+		<a href="notificationTest">캘린더</a>
+		<br><br>
 	</body>
 </html>
