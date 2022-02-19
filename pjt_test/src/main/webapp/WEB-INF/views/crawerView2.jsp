@@ -11,13 +11,13 @@
 			<a href="crawling2">크롤링하기2</a>
 			
 			<div id="infoBox">
-				<div id="img1">
-					 <h2>1</h2>
-					 ${img1 }
+				<div id="indent">
+					 <h2>indent</h2>
+					 ${indent }
 				 </div>
 				 <hr>
 				 
-				 <div id="img2">
+<%-- 				 <div id="img2">
 					 <h2>2</h2>
 					 ${img2 }
 				 </div>
@@ -46,7 +46,7 @@
 				 <div id="img7">
 					 <h2>7</h2>
 					 ${img7 }
-				 </div>
+				 </div> --%>
 			</div>
 		</div>
 	</body>
