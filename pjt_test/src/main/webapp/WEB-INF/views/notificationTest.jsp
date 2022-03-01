@@ -5,23 +5,63 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-	</head>
-	<script>
-	function notify() {
-		  if (Notification.permission !== "denied") {
-		    Notification.requestPermission(permission => {
-		      if (permission === "granted") {
-		        new Notification("Hi, Notification");
-		      } else {
-		        alert('Notification denied');
-		      }
-		    });
-		  }
-		}
+	<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
+	<script type="text/javascript">
+	    function sendLinkCustom() {
+	        Kakao.init("b3bc39226c10ad1e0663733a444b7b1d");
+	        Kakao.Link.sendCustom({
+	            templateId: 71421
+	        });
+	    }
 	</script>
-	<body>
-		<div id="wrap">
-			<button onclick="notify()">Notify</button>
-		</div>	
+	
+	<script>
+	try {
+	  function sendLinkDefault() {
+	    Kakao.init('b3bc39226c10ad1e0663733a444b7b1d')
+	    Kakao.Link.sendDefault({
+	      objectType: 'feed',
+	      content: {
+	        title: '딸기 치즈 케익',
+	        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+	        imageUrl:
+	          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+	        link: {
+	          mobileWebUrl: 'https://developers.kakao.com',
+	          webUrl: 'https://developers.kakao.com',
+	        },
+	      },
+	      social: {
+	        likeCount: 286,
+	        commentCount: 45,
+	        sharedCount: 845,
+	      },
+	      buttons: [
+	        {
+	          title: '웹으로 보기',
+	          link: {
+	            mobileWebUrl: 'https://developers.kakao.com',
+	            webUrl: 'https://developers.kakao.com',
+	          },
+	        },
+	        {
+	          title: '앱으로 보기',
+	          link: {
+	            mobileWebUrl: 'https://developers.kakao.com',
+	            webUrl: 'https://developers.kakao.com',
+	          },
+	        },
+	      ],
+	    })
+	  }
+	; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+	catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+	</script>
+	   
 	</body>
 </html>
