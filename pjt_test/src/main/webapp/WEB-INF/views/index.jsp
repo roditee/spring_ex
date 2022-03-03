@@ -37,6 +37,14 @@
 		<a href="crawerView2">크롤링2</a>
 		<br><br>
 		
+		<hr>
+		<a href="chartTest">차트</a>
+		<br><br>
+		
+		<hr>
+		<a href="kakaoSocial">카카오 소셜로그인</a>
+		<br><br>
+		
 		
 		
 		

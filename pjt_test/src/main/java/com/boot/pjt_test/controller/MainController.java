@@ -24,4 +24,14 @@ public class MainController {
 		return "webNotification";
 	}
 	
+	@RequestMapping("/chartTest")
+	public String chartTest() {
+		return "chartTest";
+	}
+	
+	@RequestMapping("/kakaoLoginDB")
+    public String kakaoLogin() {
+        return "redirect:/";
+    }
+	
 }
