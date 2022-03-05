@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	</head>
 	<body>
 	
@@ -72,10 +72,10 @@
     			type:"post",
     			url:"/kakaoSocial",
     			data:{"kakaoUserName": $('#kakaoUserName').val(),
-    						"kakaoUserEmail":  $('#kakaoUserEmail').val()},
-    						"kakaoUserBday":  $('#kakaoUserBday').val()},
-    						"kakaoUserGender":  $('#kakaoUserGender').val()
-   						}, /* 컨트롤러에서 받음 */
+    						"kakaoUserEmail":  $('#kakaoUserEmail').val(),
+    						"kakaoUserBday":  $('#kakaoUserBday').val(),
+    						"kakaoUserGender":  $('#kakaoUserGender').val(),
+    						}, /* 컨트롤러에서 받음 */
     			dataType:'text',
     			success:function(result){
     				if(result == "success"){
